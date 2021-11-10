@@ -34,7 +34,7 @@ const Banner = () => {
                 marginTop: "0",
                 padding: "20px 0",
                 fontWeight: "bold",
-                color: "black",
+                color: "#3C6382",
                 backgroundColor: "#CDCFD2",
               }}
             >

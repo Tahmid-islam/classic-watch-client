@@ -7,19 +7,17 @@ import {
   Typography,
   CircularProgress,
 } from "@mui/material";
-import CustomButton from "../../../StyledComponents/CustomButton";
+import CustomButton from "../../StyledComponents/CustomButton";
 import { useHistory } from "react-router-dom";
 
-const Watches = () => {
+const ExploreWatches = () => {
   const [products, setProducts] = useState([]);
   const history = useHistory();
 
   useEffect(() => {
-    fetch(`http://localhost:5000/products?size=6`)
+    fetch(`http://localhost:5000/products`)
       .then((res) => res.json())
-      .then((data) => {
-        setProducts(data.products);
-      });
+      .then((data) => setProducts(data.products));
   }, []);
 
   const handleBuyNow = (id) => {
@@ -29,17 +27,17 @@ const Watches = () => {
   return (
     <Box>
       <Container>
-        <Box sx={{ textAlign: "center" }}>
-          {!products.length && <CircularProgress />}{" "}
-        </Box>
-
         <Typography
           variant="h4"
           align="center"
-          sx={{ py: 3, fontWeight: "bold", color: "#3C6382" }}
+          sx={{ py: 2, fontWeight: "bold", color: "#3C6382" }}
         >
-          Our Featured Watches
+          EXPLORE OUR WATCHES
         </Typography>
+
+        <Box sx={{ textAlign: "center", py: 2 }}>
+          {!products.length && <CircularProgress />}
+        </Box>
 
         <Grid container spacing={3}>
           {products.map((product) => (
@@ -67,4 +65,4 @@ const Watches = () => {
   );
 };
 
-export default Watches;
+export default ExploreWatches;
