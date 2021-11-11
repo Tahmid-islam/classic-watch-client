@@ -4,6 +4,7 @@ import ScrollText from "react-scroll-text";
 
 const banner = {
   backgroundColor: "#ffffff",
+  padding: "20px 0",
 };
 
 const Banner = () => {

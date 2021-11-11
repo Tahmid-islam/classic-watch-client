@@ -9,6 +9,8 @@ import {
 } from "@mui/material";
 import CustomButton from "../../StyledComponents/CustomButton";
 import { useHistory } from "react-router-dom";
+import Navigation from "../Shared/Navigation";
+import Footer from "../Shared/Footer";
 
 const ExploreWatches = () => {
   const [products, setProducts] = useState([]);
@@ -30,6 +32,7 @@ const ExploreWatches = () => {
 
   return (
     <Box>
+      <Navigation></Navigation>
       <Container>
         <Typography
           variant="h4"
@@ -65,6 +68,7 @@ const ExploreWatches = () => {
           ))}
         </Grid>
       </Container>
+      <Footer></Footer>
     </Box>
   );
 };

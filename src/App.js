@@ -2,21 +2,19 @@ import "./App.css";
 import { Box } from "@mui/material";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Home from "./pages/Home/Home/Home";
-import Navigation from "./pages/Shared/Navigation";
-import Footer from "./pages/Shared/Footer";
 import ExploreWatches from "./pages/ExploreWatches/ExploreWatches";
 import Login from "./pages/Login/Login/Login";
 import Register from "./pages/Login/Register/Register";
 import Purchase from "./pages/Purchase/Purchase";
 import AuthProvider from "./contexts/AuthProvider";
 import PrivateRoute from "./pages/Login/PrivateRoute/PrivateRoute";
+import Dashboard from "./pages/Dashboard/Dashboard/Dashboard";
 
 function App() {
   return (
     <Box>
       <AuthProvider>
         <Router>
-          <Navigation />
           <Switch>
             <Route exact path="/">
               <Home></Home>
@@ -36,8 +34,10 @@ function App() {
             <PrivateRoute path="/purchase/:id">
               <Purchase></Purchase>
             </PrivateRoute>
+            <PrivateRoute path="/dashboard">
+              <Dashboard></Dashboard>
+            </PrivateRoute>
           </Switch>
-          <Footer></Footer>
         </Router>
       </AuthProvider>
     </Box>

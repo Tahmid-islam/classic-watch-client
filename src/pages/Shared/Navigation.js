@@ -15,6 +15,7 @@ const Navigation = () => {
     >
       <NavItem to="/home">Home</NavItem>
       <NavItem to="/exploreWatches">Explore Watches</NavItem>
+      {user.email && <NavItem to="/dashboard">Dashboard</NavItem>}
       {user.email ? (
         <NavItem to="/">
           <CustomButton
