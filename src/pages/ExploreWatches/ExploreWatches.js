@@ -15,6 +15,10 @@ const ExploreWatches = () => {
   const history = useHistory();
 
   useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+  useEffect(() => {
     fetch(`http://localhost:5000/products`)
       .then((res) => res.json())
       .then((data) => setProducts(data.products));

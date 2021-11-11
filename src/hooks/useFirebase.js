@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import initializeFirebase from "../Pages/Login/Firebase/firebase.init";
+import initializeFirebase from "../pages/Login/Firebase/firebase.init";
 import {
   getAuth,
   signInWithPopup,
@@ -94,6 +94,7 @@ const useFirebase = () => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
       if (user) {
         setUser(user);
+        setError("");
       } else {
         setUser({});
       }
@@ -138,6 +139,7 @@ const useFirebase = () => {
     signInWithGoogle,
     logout,
     error,
+    setError,
   };
 };
 

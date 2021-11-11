@@ -8,34 +8,38 @@ import ExploreWatches from "./pages/ExploreWatches/ExploreWatches";
 import Login from "./pages/Login/Login/Login";
 import Register from "./pages/Login/Register/Register";
 import Purchase from "./pages/Purchase/Purchase";
+import AuthProvider from "./contexts/AuthProvider";
+import PrivateRoute from "./pages/Login/PrivateRoute/PrivateRoute";
 
 function App() {
   return (
     <Box>
-      <Router>
-        <Navigation />
-        <Switch>
-          <Route exact path="/">
-            <Home></Home>
-          </Route>
-          <Route path="/home">
-            <Home></Home>
-          </Route>
-          <Route path="/exploreWatches">
-            <ExploreWatches></ExploreWatches>
-          </Route>
-          <Route path="/login">
-            <Login></Login>
-          </Route>
-          <Route path="/register">
-            <Register></Register>
-          </Route>
-          <Route path="/purchase/:id">
-            <Purchase></Purchase>
-          </Route>
-        </Switch>
-        <Footer></Footer>
-      </Router>
+      <AuthProvider>
+        <Router>
+          <Navigation />
+          <Switch>
+            <Route exact path="/">
+              <Home></Home>
+            </Route>
+            <Route path="/home">
+              <Home></Home>
+            </Route>
+            <Route path="/exploreWatches">
+              <ExploreWatches></ExploreWatches>
+            </Route>
+            <Route path="/login">
+              <Login></Login>
+            </Route>
+            <Route path="/register">
+              <Register></Register>
+            </Route>
+            <PrivateRoute path="/purchase/:id">
+              <Purchase></Purchase>
+            </PrivateRoute>
+          </Switch>
+          <Footer></Footer>
+        </Router>
+      </AuthProvider>
     </Box>
   );
 }
