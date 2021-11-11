@@ -41,7 +41,7 @@ const Login = () => {
         <Grid
           container
           spacing={2}
-          sx={{ textAlign: "center", height: "80vh", mt: 10 }}
+          sx={{ textAlign: "center", height: "100vh", mt: 10 }}
         >
           <Grid item xs={12} md={6}>
             <img
