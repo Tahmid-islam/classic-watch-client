@@ -72,6 +72,7 @@ export default function AllOrders() {
             <TableCell align="center">Name</TableCell>
             <TableCell align="center">Address</TableCell>
             <TableCell align="center">Phone</TableCell>
+            <TableCell align="center">Email</TableCell>
             <TableCell align="center">Product Name</TableCell>
             <TableCell align="center">Price</TableCell>
             <TableCell align="center">Order Id</TableCell>
@@ -96,6 +97,7 @@ export default function AllOrders() {
               <TableCell align="center">{row.name}</TableCell>
               <TableCell align="center">{row.address}</TableCell>
               <TableCell align="center">{row.phone}</TableCell>
+              <TableCell align="center">{row.email}</TableCell>
               <TableCell align="center">{row.productName}</TableCell>
               <TableCell align="center">{row.price}</TableCell>
               <TableCell align="center">{row._id}</TableCell>
