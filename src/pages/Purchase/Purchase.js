@@ -35,6 +35,7 @@ const Purchase = () => {
       brand: product.brand,
       img: product.img,
       price: product.price,
+      status: "Pending",
     };
 
     fetch("http://localhost:5000/orders", {
@@ -51,9 +52,6 @@ const Purchase = () => {
           reset();
         }
       });
-
-    console.log(newData);
-    reset();
   };
 
   useEffect(() => {
@@ -146,6 +144,7 @@ const Purchase = () => {
                 placeholder="Enter Your Email"
                 defaultValue={user.email}
                 type="email"
+                readOnly
                 required
                 style={{ width: "90%", padding: 10, marginTop: 10 }}
                 {...register("email", { required: true })}

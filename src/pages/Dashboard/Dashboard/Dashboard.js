@@ -47,7 +47,7 @@ function ResponsiveDrawer(props) {
       <List>
         <Divider />
         <NavLink to="/" style={style}>
-          <ListItem>Classic Watch Home</ListItem>
+          <ListItem>Home</ListItem>
         </NavLink>
       </List>
 

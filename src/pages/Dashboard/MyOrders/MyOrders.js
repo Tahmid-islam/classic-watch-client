@@ -20,6 +20,27 @@ export default function MyOrders() {
       .then((data) => setMyOrders(data));
   }, [user.email]);
 
+  //Delete
+  const handleDeleteOrder = (id) => {
+    const proceed = window.confirm("Are you sure, you want to delete?");
+    if (proceed) {
+      const url = `http://localhost:5000/orders/${id}`;
+      fetch(url, {
+        method: "DELETE",
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          if (data.deletedCount > 0) {
+            alert("Deleted Successfully");
+            const remainingOrders = myOrders.filter(
+              (order) => order._id !== id
+            );
+            setMyOrders(remainingOrders);
+          }
+        });
+    }
+  };
+
   return (
     <TableContainer component={Paper}>
       <Table sx={{ minWidth: 650 }} aria-label="simple table">
@@ -30,10 +51,10 @@ export default function MyOrders() {
             <TableCell align="center">Name</TableCell>
             <TableCell align="center">Address</TableCell>
             <TableCell align="center">Phone</TableCell>
-            <TableCell align="center">Email</TableCell>
             <TableCell align="center">Product Name</TableCell>
             <TableCell align="center">Price</TableCell>
             <TableCell align="center">Order Id</TableCell>
+            <TableCell align="center">Status</TableCell>
             <TableCell align="center">Delete</TableCell>
           </TableRow>
         </TableHead>
@@ -51,12 +72,14 @@ export default function MyOrders() {
               <TableCell align="center">{row.name}</TableCell>
               <TableCell align="center">{row.address}</TableCell>
               <TableCell align="center">{row.phone}</TableCell>
-              <TableCell align="center">{row.email}</TableCell>
               <TableCell align="center">{row.productName}</TableCell>
               <TableCell align="center">{row.price}</TableCell>
               <TableCell align="center">{row._id}</TableCell>
+              <TableCell align="center">{row.status}</TableCell>
               <TableCell align="center">
-                <CustomButton>X</CustomButton>
+                <CustomButton onClick={() => handleDeleteOrder(row._id)}>
+                  X
+                </CustomButton>
               </TableCell>
             </TableRow>
           ))}
