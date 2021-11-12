@@ -52,7 +52,10 @@ const ExploreWatches = () => {
           <Grid container spacing={3}>
             {products.map((product) => (
               <Grid item xs={12} sm={6} md={4} lg={4} key={product._id}>
-                <Paper elevation={3} sx={{ textAlign: "center", py: 3 }}>
+                <Paper
+                  elevation={3}
+                  sx={{ textAlign: "center", py: 3, border: "1px solid red" }}
+                >
                   <img src={product.img} alt={product.name} />
                   <Typography variant="body2" sx={{ fontWeight: "bold" }}>
                     {product.brand}

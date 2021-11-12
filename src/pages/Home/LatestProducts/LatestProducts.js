@@ -74,6 +74,7 @@ function LatestProducts() {
                     display: "block",
                     overflow: "hidden",
                     width: "100%",
+                    borderRadius: "10px",
                   }}
                   src={step.imgPath}
                 />

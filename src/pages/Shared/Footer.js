@@ -13,7 +13,7 @@ import { NavLink } from "react-router-dom";
 const useStyle = makeStyles({
   footerStyle: {
     width: "100%",
-    backgroundColor: "#3c6382",
+    backgroundColor: "#3867d6",
     marginTop: "10px",
     paddingTop: "10px",
   },

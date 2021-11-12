@@ -7,7 +7,7 @@ const Navigation = () => {
   const { user, logout } = useAuth();
   return (
     <MuiNavbar
-      background="#3c6382"
+      background="#3867d6"
       height="70px"
       navItemPosition="right"
       togglerColor="#fff"
