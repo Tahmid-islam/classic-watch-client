@@ -30,7 +30,7 @@ const Review = () => {
       .then((res) => res.json())
       .then((result) => {
         if (result.insertedId) {
-          alert("Review Successfully Posted");
+          alert("Review Posted Successfully");
           reset();
         }
       });
@@ -74,11 +74,12 @@ const Review = () => {
                 {...register("rating", { required: true, min: 1, max: 5 })}
               />
               <textarea
-                placeholder="Write Your Review....."
+                placeholder="Write Your Review.....(Max 250 Letters)"
                 type="text"
                 required
+                maxLength="250"
                 style={{ width: "90%", padding: 10, marginTop: 10 }}
-                {...register("review", { required: true })}
+                {...register("message", { required: true })}
               />
 
               {isLoading && <CircularProgress />}

@@ -91,7 +91,7 @@ export default function AllOrders() {
                 {count++}
               </TableCell>
               <TableCell align="center">
-                <img width="70%" src={row.img} alt="" />
+                <img width="100%" src={row.img} alt="" />
               </TableCell>
 
               <TableCell align="center">{row.name}</TableCell>

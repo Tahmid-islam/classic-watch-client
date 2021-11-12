@@ -30,7 +30,7 @@ const Watches = () => {
     <Box>
       <Container>
         <Box sx={{ textAlign: "center" }}>
-          {!products.length && <CircularProgress />}{" "}
+          {!products.length && <CircularProgress />}
         </Box>
 
         <Typography
