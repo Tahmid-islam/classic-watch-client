@@ -36,7 +36,7 @@ const Banner = () => {
                 padding: "20px 0",
                 fontWeight: "bold",
                 color: "#3C6382",
-                backgroundColor: "#CDCFD2",
+                backgroundColor: "#ECF0F1",
               }}
             >
               Classic Watch is a very reputed and popular name for world class

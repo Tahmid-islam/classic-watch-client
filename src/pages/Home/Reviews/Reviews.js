@@ -71,7 +71,7 @@ export default function Reviews() {
         {reviews.map((review) => {
           return (
             <React.Fragment key={review._id}>
-              <CardContent sx={{ backgroundColor: "#ecf0f1", boxShadow: 2 }}>
+              <CardContent sx={{ backgroundColor: "#ecf0f1", boxShadow: 1 }}>
                 <Typography
                   sx={{
                     fontSize: 16,
