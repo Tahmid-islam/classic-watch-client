@@ -21,6 +21,7 @@ import Review from "../Review/Review";
 import AllOrders from "../AllOrders/AllOrders";
 import ManageProducts from "../ManageProducts/ManageProducts";
 import AddProduct from "../AddProduct/AddProduct";
+import AdminRoute from "../../Login/AdminRoute/AdminRoute";
 
 const style = {
   textDecoration: "none",
@@ -34,9 +35,8 @@ const drawerWidth = 240;
 function ResponsiveDrawer(props) {
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
-
   let { path, url } = useRouteMatch();
-  const { user, logout } = useAuth();
+  const { user, logout, isAdmin } = useAuth();
 
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
@@ -104,49 +104,51 @@ function ResponsiveDrawer(props) {
       </List>
 
       {/* admin part */}
-      <List>
-        <Divider />
-        <NavLink to={`${url}/makeAdmin`} style={style}>
-          <ListItem>
-            <img
-              src="https://cdns.iconmonstr.com/wp-content/assets/preview/2012/96/iconmonstr-user-8.png"
-              alt=""
-              width="20%"
-            />
-            &nbsp; Make Admin
-          </ListItem>
-        </NavLink>
-        <NavLink to={`${url}/allOrders`} style={style}>
-          <ListItem>
-            <img
-              src="https://cdns.iconmonstr.com/wp-content/assets/preview/2017/96/iconmonstr-delivery-10.png"
-              alt=""
-              width="20%"
-            />
-            &nbsp; Manage All Orders
-          </ListItem>
-        </NavLink>
-        <NavLink to={`${url}/manageProducts`} style={style}>
-          <ListItem>
-            <img
-              src="https://cdns.iconmonstr.com/wp-content/assets/preview/2019/96/iconmonstr-product-13.png"
-              alt=""
-              width="20%"
-            />
-            &nbsp; Manage Products
-          </ListItem>
-        </NavLink>
-        <NavLink to={`${url}/AddProduct`} style={style}>
-          <ListItem>
-            <img
-              src="https://cdns.iconmonstr.com/wp-content/assets/preview/2019/96/iconmonstr-product-9.png"
-              alt=""
-              width="20%"
-            />
-            &nbsp; Add Product
-          </ListItem>
-        </NavLink>
-      </List>
+      {isAdmin && (
+        <List>
+          <Divider />
+          <NavLink to={`${url}/makeAdmin`} style={style}>
+            <ListItem>
+              <img
+                src="https://cdns.iconmonstr.com/wp-content/assets/preview/2012/96/iconmonstr-user-8.png"
+                alt=""
+                width="20%"
+              />
+              &nbsp; Make Admin
+            </ListItem>
+          </NavLink>
+          <NavLink to={`${url}/allOrders`} style={style}>
+            <ListItem>
+              <img
+                src="https://cdns.iconmonstr.com/wp-content/assets/preview/2017/96/iconmonstr-delivery-10.png"
+                alt=""
+                width="20%"
+              />
+              &nbsp; Manage All Orders
+            </ListItem>
+          </NavLink>
+          <NavLink to={`${url}/manageProducts`} style={style}>
+            <ListItem>
+              <img
+                src="https://cdns.iconmonstr.com/wp-content/assets/preview/2019/96/iconmonstr-product-13.png"
+                alt=""
+                width="20%"
+              />
+              &nbsp; Manage Products
+            </ListItem>
+          </NavLink>
+          <NavLink to={`${url}/AddProduct`} style={style}>
+            <ListItem>
+              <img
+                src="https://cdns.iconmonstr.com/wp-content/assets/preview/2019/96/iconmonstr-product-9.png"
+                alt=""
+                width="20%"
+              />
+              &nbsp; Add Product
+            </ListItem>
+          </NavLink>
+        </List>
+      )}
 
       <List>
         <Divider />
@@ -195,7 +197,7 @@ function ResponsiveDrawer(props) {
           />
           &nbsp;
           <Typography variant="h6" noWrap component="div" sx={{ py: 3 }}>
-            {user.displayName}'s Dashboard
+            {user.displayName}'s Dashboard {isAdmin && "(Admin)"}
           </Typography>
         </Toolbar>
       </AppBar>
@@ -259,18 +261,18 @@ function ResponsiveDrawer(props) {
           <Route path={`${path}/pay`}>
             <Pay></Pay>
           </Route>
-          <Route path={`${path}/makeAdmin`}>
+          <AdminRoute path={`${path}/makeAdmin`}>
             <MakeAdmin></MakeAdmin>
-          </Route>
-          <Route path={`${path}/allOrders`}>
+          </AdminRoute>
+          <AdminRoute path={`${path}/allOrders`}>
             <AllOrders></AllOrders>
-          </Route>
-          <Route path={`${path}/manageProducts`}>
+          </AdminRoute>
+          <AdminRoute path={`${path}/manageProducts`}>
             <ManageProducts></ManageProducts>
-          </Route>
-          <Route path={`${path}/addProduct`}>
+          </AdminRoute>
+          <AdminRoute path={`${path}/addProduct`}>
             <AddProduct></AddProduct>
-          </Route>
+          </AdminRoute>
         </Switch>
       </Box>
     </Box>
