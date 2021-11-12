@@ -63,7 +63,7 @@ export default function Reviews() {
       <Typography
         variant="h4"
         align="center"
-        sx={{ py: 3, fontWeight: "bold", color: "#3C6382" }}
+        sx={{ py: 3, fontWeight: "bold", color: "#e74c3c" }}
       >
         Our Reviews
       </Typography>
@@ -71,7 +71,7 @@ export default function Reviews() {
         {reviews.map((review) => {
           return (
             <React.Fragment key={review._id}>
-              <CardContent sx={{ backgroundColor: "#ecf0f1" }}>
+              <CardContent sx={{ backgroundColor: "#ecf0f1", boxShadow: 2 }}>
                 <Typography
                   sx={{
                     fontSize: 16,

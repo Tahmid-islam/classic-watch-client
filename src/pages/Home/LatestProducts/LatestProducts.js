@@ -11,15 +11,14 @@ const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 const images = [
   {
     imgPath:
-      "https://images.pexels.com/photos/266666/pexels-photo-266666.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "https://www.casio-intl.com/cs/Satellite?blobcol=urldata&blobheader=image%2Fjpeg&blobheadername1=content-disposition&blobheadervalue1=inline%3Bfilename%3DG-Shock-1200x600.jpg&blobkey=id&blobtable=MungoBlobs&blobwhere=1426272549957&ssbinary=true",
   },
   {
     imgPath:
-      "https://images.pexels.com/photos/4124334/pexels-photo-4124334.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "https://www.casio-intl.com/cs/Satellite?blobcol=urldata&blobheader=image%2Fjpeg&blobheadername1=content-disposition&blobheadervalue1=inline%3Bfilename%3DEdifice-Chronograph--1200x600.jpg&blobkey=id&blobtable=MungoBlobs&blobwhere=1426249133942&ssbinary=true",
   },
   {
-    imgPath:
-      "https://images.pexels.com/photos/7067572/pexels-photo-7067572.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+    imgPath: "https://babyg.casio.com/assets2018/img/bga-290bd/main.jpg",
   },
   {
     imgPath:
@@ -40,7 +39,7 @@ function LatestProducts() {
       <Typography
         variant="h4"
         align="center"
-        sx={{ py: 4, fontWeight: "bold", color: "#3C6382" }}
+        sx={{ py: 4, fontWeight: "bold", color: "#e74c3c" }}
       >
         Latest Products
       </Typography>

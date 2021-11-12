@@ -71,36 +71,40 @@ function ResponsiveDrawer(props) {
             &nbsp; Dashboard
           </ListItem>
         </NavLink>
-        <NavLink to={`${url}/myOrders`} style={style}>
-          <ListItem>
-            <img
-              src="https://cdns.iconmonstr.com/wp-content/assets/preview/2013/96/iconmonstr-shopping-cart-3.png"
-              alt=""
-              width="20%"
-            />
-            &nbsp; My Orders
-          </ListItem>
-        </NavLink>
-        <NavLink to={`${url}/review`} style={style}>
-          <ListItem>
-            <img
-              src="https://cdns.iconmonstr.com/wp-content/assets/preview/2012/96/iconmonstr-star-3.png"
-              alt=""
-              width="20%"
-            />
-            &nbsp; Review
-          </ListItem>
-        </NavLink>
-        <NavLink to={`${url}/pay`} style={style}>
-          <ListItem>
-            <img
-              src="https://cdns.iconmonstr.com/wp-content/assets/preview/2013/96/iconmonstr-banknote-15.png"
-              alt=""
-              width="20%"
-            />
-            &nbsp; Pay
-          </ListItem>
-        </NavLink>
+        {!isAdmin && (
+          <>
+            <NavLink to={`${url}/myOrders`} style={style}>
+              <ListItem>
+                <img
+                  src="https://cdns.iconmonstr.com/wp-content/assets/preview/2013/96/iconmonstr-shopping-cart-3.png"
+                  alt=""
+                  width="20%"
+                />
+                &nbsp; My Orders
+              </ListItem>
+            </NavLink>
+            <NavLink to={`${url}/review`} style={style}>
+              <ListItem>
+                <img
+                  src="https://cdns.iconmonstr.com/wp-content/assets/preview/2012/96/iconmonstr-star-3.png"
+                  alt=""
+                  width="20%"
+                />
+                &nbsp; Review
+              </ListItem>
+            </NavLink>
+            <NavLink to={`${url}/pay`} style={style}>
+              <ListItem>
+                <img
+                  src="https://cdns.iconmonstr.com/wp-content/assets/preview/2013/96/iconmonstr-banknote-15.png"
+                  alt=""
+                  width="20%"
+                />
+                &nbsp; Pay
+              </ListItem>
+            </NavLink>
+          </>
+        )}
       </List>
 
       {/* admin part */}

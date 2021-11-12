@@ -46,7 +46,7 @@ export default function MyOrders() {
       <Typography
         variant="h4"
         align="center"
-        sx={{ py: 4, fontWeight: "bold", color: "#3C6382" }}
+        sx={{ py: 4, fontWeight: "bold", color: "#e74c3c" }}
       >
         My Orders
       </Typography>

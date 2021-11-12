@@ -53,7 +53,7 @@ const Review = () => {
                 width: "100%",
                 textAlign: "center",
                 fontWeight: "bold",
-                color: "#3C6382",
+                color: "#e74c3c",
               }}
             >
               Review About Our Service

@@ -36,7 +36,11 @@ const Watches = () => {
         <Typography
           variant="h4"
           align="center"
-          sx={{ py: 3, fontWeight: "bold", color: "#3C6382" }}
+          sx={{
+            py: 3,
+            fontWeight: "bold",
+            color: "#e74c3c",
+          }}
         >
           Our Featured Watches
         </Typography>

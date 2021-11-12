@@ -33,7 +33,7 @@ const MakeAdmin = () => {
           width: "100%",
           textAlign: "center",
           fontWeight: "bold",
-          color: "#3C6382",
+          color: "#e74c3c",
         }}
       >
         Make New Admin
@@ -57,7 +57,7 @@ const MakeAdmin = () => {
         )}
 
         <CustomButton type="submit" sx={{ mt: 2 }}>
-          <i className="fas fa-sign-in-alt"></i>&nbsp; Make Admin
+          <i className="fas fa-user-cog"></i>&nbsp; Make Admin
         </CustomButton>
       </form>
     </Box>

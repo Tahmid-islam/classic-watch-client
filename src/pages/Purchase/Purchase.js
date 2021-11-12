@@ -125,7 +125,7 @@ const Purchase = () => {
               sx={{
                 fontWeight: "bold",
                 textAlign: "center",
-                color: "#3c6382",
+                color: "#e74c3c",
               }}
             >
               Purchase Form
