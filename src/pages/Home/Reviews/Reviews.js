@@ -73,7 +73,7 @@ export default function Reviews() {
             <Box sx={{ px: 4, mx: 4 }}>
               <Box sx={{ textAlign: "center", p: 3 }}>
                 <Typography variant="h5">{review.name}</Typography>
-                <Typography variant="body1">{review.review}</Typography>
+                <Typography variant="body1">{review.message}</Typography>
               </Box>
             </Box>
           );
