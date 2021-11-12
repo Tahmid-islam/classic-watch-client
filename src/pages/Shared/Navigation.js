@@ -10,7 +10,7 @@ const Navigation = () => {
       background="#3c6382"
       height="70px"
       navItemPosition="right"
-      togglerColor="black"
+      togglerColor="#fff"
       logo="https://classicwatchny.com/wp-content/uploads/2016/03/clwa_logo_final-01.jpg"
     >
       <NavItem to="/home">Home</NavItem>
@@ -20,7 +20,7 @@ const Navigation = () => {
         <NavItem to="/">
           <CustomButton
             variant="contained"
-            sx={{ px: 2, py: 1 }}
+            sx={{ px: 2, py: 1, fontSize: "12px" }}
             onClick={logout}
           >
             <i className="fas fa-sign-out-alt"></i> &nbsp; Logout

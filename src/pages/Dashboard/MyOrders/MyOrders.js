@@ -1,5 +1,5 @@
 import * as React from "react";
-import Table from "@mui/material/Table";
+import { Table, Container, Typography } from "@mui/material";
 import TableBody from "@mui/material/TableBody";
 import TableCell from "@mui/material/TableCell";
 import TableContainer from "@mui/material/TableContainer";
@@ -42,49 +42,58 @@ export default function MyOrders() {
   };
 
   return (
-    <TableContainer component={Paper}>
-      <Table sx={{ minWidth: 650 }} aria-label="simple table">
-        <TableHead>
-          <TableRow>
-            <TableCell align="center">Serial</TableCell>
-            <TableCell align="center">Image</TableCell>
-            <TableCell align="center">Name</TableCell>
-            <TableCell align="center">Address</TableCell>
-            <TableCell align="center">Phone</TableCell>
-            <TableCell align="center">Product Name</TableCell>
-            <TableCell align="center">Price</TableCell>
-            <TableCell align="center">Order Id</TableCell>
-            <TableCell align="center">Status</TableCell>
-            <TableCell align="center">Delete</TableCell>
-          </TableRow>
-        </TableHead>
-        <TableBody>
-          {myOrders.map((row) => (
-            <TableRow
-              key={row._id}
-              sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
-            >
-              <TableCell align="center">{count++}</TableCell>
-              <TableCell align="center">
-                <img width="70%" src={row.img} alt="" />
-              </TableCell>
-
-              <TableCell align="center">{row.name}</TableCell>
-              <TableCell align="center">{row.address}</TableCell>
-              <TableCell align="center">{row.phone}</TableCell>
-              <TableCell align="center">{row.productName}</TableCell>
-              <TableCell align="center">{row.price}</TableCell>
-              <TableCell align="center">{row._id}</TableCell>
-              <TableCell align="center">{row.status}</TableCell>
-              <TableCell align="center">
-                <CustomButton onClick={() => handleDeleteOrder(row._id)}>
-                  X
-                </CustomButton>
-              </TableCell>
+    <Container>
+      <Typography
+        variant="h4"
+        align="center"
+        sx={{ py: 4, fontWeight: "bold", color: "#3C6382" }}
+      >
+        My Orders
+      </Typography>
+      <TableContainer component={Paper}>
+        <Table sx={{ minWidth: 650 }} aria-label="simple table">
+          <TableHead>
+            <TableRow>
+              <TableCell align="center">Serial</TableCell>
+              <TableCell align="center">Image</TableCell>
+              <TableCell align="center">Name</TableCell>
+              <TableCell align="center">Address</TableCell>
+              <TableCell align="center">Phone</TableCell>
+              <TableCell align="center">Product Name</TableCell>
+              <TableCell align="center">Price</TableCell>
+              <TableCell align="center">Order Id</TableCell>
+              <TableCell align="center">Status</TableCell>
+              <TableCell align="center">Delete</TableCell>
             </TableRow>
-          ))}
-        </TableBody>
-      </Table>
-    </TableContainer>
+          </TableHead>
+          <TableBody>
+            {myOrders.map((row) => (
+              <TableRow
+                key={row._id}
+                sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
+              >
+                <TableCell align="center">{count++}</TableCell>
+                <TableCell align="center">
+                  <img width="70%" src={row.img} alt="" />
+                </TableCell>
+
+                <TableCell align="center">{row.name}</TableCell>
+                <TableCell align="center">{row.address}</TableCell>
+                <TableCell align="center">{row.phone}</TableCell>
+                <TableCell align="center">{row.productName}</TableCell>
+                <TableCell align="center">{row.price}</TableCell>
+                <TableCell align="center">{row._id}</TableCell>
+                <TableCell align="center">{row.status}</TableCell>
+                <TableCell align="center">
+                  <CustomButton onClick={() => handleDeleteOrder(row._id)}>
+                    X
+                  </CustomButton>
+                </TableCell>
+              </TableRow>
+            ))}
+          </TableBody>
+        </Table>
+      </TableContainer>
+    </Container>
   );
 }

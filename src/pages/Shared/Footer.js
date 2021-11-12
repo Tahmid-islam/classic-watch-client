@@ -12,6 +12,7 @@ import { NavLink } from "react-router-dom";
 
 const useStyle = makeStyles({
   footerStyle: {
+    width: "100%",
     backgroundColor: "#3c6382",
     marginTop: "10px",
     paddingTop: "10px",
@@ -78,7 +79,7 @@ const Footer = () => {
               </ListItemText>
               <ListItemText>
                 Union Center, 68/1, Gulshan Avenue, Dhaka, Bangladesh Phone:
-                01713199299 Email: info@watchesworldbd.com
+                01713199299 Email: info@classicwatch.com
               </ListItemText>
             </List>
             <ListItemText sx={{ mt: 1, fontWeight: "bold" }}>

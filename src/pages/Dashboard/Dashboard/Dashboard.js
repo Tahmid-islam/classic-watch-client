@@ -20,6 +20,7 @@ import Pay from "../Pay/Pay";
 import Review from "../Review/Review";
 import AllOrders from "../AllOrders/AllOrders";
 import ManageProducts from "../ManageProducts/ManageProducts";
+import AddProduct from "../AddProduct/AddProduct";
 
 const style = {
   textDecoration: "none",
@@ -47,23 +48,58 @@ function ResponsiveDrawer(props) {
       <List>
         <Divider />
         <NavLink to="/" style={style}>
-          <ListItem>Home</ListItem>
+          <ListItem>
+            <img
+              src="https://cdns.iconmonstr.com/wp-content/assets/preview/2012/96/iconmonstr-home-6.png"
+              alt=""
+              width="20%"
+            />
+            &nbsp; Home
+          </ListItem>
         </NavLink>
       </List>
 
       <List>
         <Divider />
         <NavLink to={`${url}`} style={style}>
-          <ListItem>Dashboard</ListItem>
+          <ListItem>
+            <img
+              src="https://cdns.iconmonstr.com/wp-content/assets/preview/2012/96/iconmonstr-monitoring-10.png"
+              alt=""
+              width="20%"
+            />
+            &nbsp; Dashboard
+          </ListItem>
         </NavLink>
         <NavLink to={`${url}/myOrders`} style={style}>
-          <ListItem>My Orders</ListItem>
+          <ListItem>
+            <img
+              src="https://cdns.iconmonstr.com/wp-content/assets/preview/2013/96/iconmonstr-shopping-cart-3.png"
+              alt=""
+              width="20%"
+            />
+            &nbsp; My Orders
+          </ListItem>
         </NavLink>
         <NavLink to={`${url}/review`} style={style}>
-          <ListItem>Review</ListItem>
+          <ListItem>
+            <img
+              src="https://cdns.iconmonstr.com/wp-content/assets/preview/2012/96/iconmonstr-star-3.png"
+              alt=""
+              width="20%"
+            />
+            &nbsp; Review
+          </ListItem>
         </NavLink>
         <NavLink to={`${url}/pay`} style={style}>
-          <ListItem>Pay</ListItem>
+          <ListItem>
+            <img
+              src="https://cdns.iconmonstr.com/wp-content/assets/preview/2013/96/iconmonstr-banknote-15.png"
+              alt=""
+              width="20%"
+            />
+            &nbsp; Pay
+          </ListItem>
         </NavLink>
       </List>
 
@@ -71,20 +107,58 @@ function ResponsiveDrawer(props) {
       <List>
         <Divider />
         <NavLink to={`${url}/makeAdmin`} style={style}>
-          <ListItem>Make Admin</ListItem>
+          <ListItem>
+            <img
+              src="https://cdns.iconmonstr.com/wp-content/assets/preview/2012/96/iconmonstr-user-8.png"
+              alt=""
+              width="20%"
+            />
+            &nbsp; Make Admin
+          </ListItem>
         </NavLink>
         <NavLink to={`${url}/allOrders`} style={style}>
-          <ListItem>Manage All Orders</ListItem>
+          <ListItem>
+            <img
+              src="https://cdns.iconmonstr.com/wp-content/assets/preview/2017/96/iconmonstr-delivery-10.png"
+              alt=""
+              width="20%"
+            />
+            &nbsp; Manage All Orders
+          </ListItem>
         </NavLink>
         <NavLink to={`${url}/manageProducts`} style={style}>
-          <ListItem>Manage Products</ListItem>
+          <ListItem>
+            <img
+              src="https://cdns.iconmonstr.com/wp-content/assets/preview/2019/96/iconmonstr-product-13.png"
+              alt=""
+              width="20%"
+            />
+            &nbsp; Manage Products
+          </ListItem>
+        </NavLink>
+        <NavLink to={`${url}/AddProduct`} style={style}>
+          <ListItem>
+            <img
+              src="https://cdns.iconmonstr.com/wp-content/assets/preview/2019/96/iconmonstr-product-9.png"
+              alt=""
+              width="20%"
+            />
+            &nbsp; Add Product
+          </ListItem>
         </NavLink>
       </List>
 
       <List>
         <Divider />
         <NavLink to="/" style={style} onClick={logout}>
-          <ListItem>Logout</ListItem>
+          <ListItem>
+            <img
+              src="https://cdns.iconmonstr.com/wp-content/assets/preview/2013/96/iconmonstr-log-out-14.png"
+              alt=""
+              width="20%"
+            />
+            &nbsp; Logout
+          </ListItem>
         </NavLink>
       </List>
     </div>
@@ -176,23 +250,26 @@ function ResponsiveDrawer(props) {
           <Route exact path={path}>
             <DashboardHome></DashboardHome>
           </Route>
-          <Route exact path={`${path}/myOrders`}>
+          <Route path={`${path}/myOrders`}>
             <MyOrders></MyOrders>
           </Route>
-          <Route exact path={`${path}/review`}>
+          <Route path={`${path}/review`}>
             <Review></Review>
           </Route>
-          <Route exact path={`${path}/pay`}>
+          <Route path={`${path}/pay`}>
             <Pay></Pay>
           </Route>
-          <Route exact path={`${path}/makeAdmin`}>
+          <Route path={`${path}/makeAdmin`}>
             <MakeAdmin></MakeAdmin>
           </Route>
-          <Route exact path={`${path}/allOrders`}>
+          <Route path={`${path}/allOrders`}>
             <AllOrders></AllOrders>
           </Route>
-          <Route exact path={`${path}/manageProducts`}>
+          <Route path={`${path}/manageProducts`}>
             <ManageProducts></ManageProducts>
+          </Route>
+          <Route path={`${path}/addProduct`}>
+            <AddProduct></AddProduct>
           </Route>
         </Switch>
       </Box>

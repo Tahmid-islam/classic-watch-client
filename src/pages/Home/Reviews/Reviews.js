@@ -2,7 +2,10 @@ import React, { useEffect, useState } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { Container, Typography, Box } from "@mui/material";
+import { Container, Typography } from "@mui/material";
+import Rating from "react-rating";
+import CardContent from "@mui/material/CardContent";
+import "./Reviews.css";
 
 export default function Reviews() {
   var settings = {
@@ -52,11 +55,8 @@ export default function Reviews() {
   useEffect(() => {
     fetch(`http://localhost:5000/reviews`)
       .then((res) => res.json())
-      .then((data) => {
-        console.log(data);
-        setReviews(data);
-      });
-  }, []);
+      .then((data) => setReviews(data));
+  }, [reviews]);
 
   return (
     <Container sx={{ py: 5 }}>
@@ -70,12 +70,43 @@ export default function Reviews() {
       <Slider {...settings}>
         {reviews.map((review) => {
           return (
-            <Box sx={{ px: 4, mx: 4 }}>
-              <Box sx={{ textAlign: "center", p: 3 }}>
-                <Typography variant="h5">{review.name}</Typography>
-                <Typography variant="body1">{review.message}</Typography>
-              </Box>
-            </Box>
+            <React.Fragment key={review._id}>
+              <CardContent sx={{ backgroundColor: "#ecf0f1" }}>
+                <Typography
+                  sx={{
+                    fontSize: 16,
+                    fontWeight: "bold",
+                    textAlign: "center",
+                  }}
+                  color="black"
+                  gutterBottom
+                >
+                  {review.name}
+                </Typography>
+                <Typography
+                  variant="h5"
+                  component="div"
+                  sx={{ fontWeight: "bold", textAlign: "center" }}
+                >
+                  <Rating
+                    initialRating={review.rating}
+                    emptySymbol="far fa-star icon-color"
+                    fullSymbol="fas fa-star icon-color"
+                    readonly
+                  ></Rating>
+                </Typography>
+                <Typography
+                  sx={{ mb: 1.5 }}
+                  color="text.secondary"
+                ></Typography>
+                <Typography
+                  variant="body2"
+                  sx={{ minHeight: "20vh", textAlign: "justify" }}
+                >
+                  {review.message}
+                </Typography>
+              </CardContent>
+            </React.Fragment>
           );
         })}
       </Slider>
