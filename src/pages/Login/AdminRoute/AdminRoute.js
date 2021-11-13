@@ -15,7 +15,7 @@ const AdminRoute = ({ children, ...rest }) => {
       <Route
         {...rest}
         render={({ location }) =>
-          user.email && isAdmin === true ? (
+          user.email && isAdmin ? (
             children
           ) : (
             <Redirect

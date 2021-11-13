@@ -13,7 +13,7 @@ export default function ManageProducts() {
   let count = 1;
 
   React.useEffect(() => {
-    fetch(`http://localhost:5000/products`)
+    fetch(`https://agile-plains-53305.herokuapp.com/products`)
       .then((res) => res.json())
       .then((data) => setProducts(data.products));
   }, [products]);
@@ -22,7 +22,7 @@ export default function ManageProducts() {
   const handleDeleteProduct = (id) => {
     const proceed = window.confirm("Are you sure, you want to delete?");
     if (proceed) {
-      const url = `http://localhost:5000/products/${id}`;
+      const url = `https://agile-plains-53305.herokuapp.com/products/${id}`;
       fetch(url, {
         method: "DELETE",
       })

@@ -38,7 +38,7 @@ const Purchase = () => {
       status: "Pending",
     };
 
-    fetch("http://localhost:5000/orders", {
+    fetch("https://agile-plains-53305.herokuapp.com/orders", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -55,7 +55,7 @@ const Purchase = () => {
   };
 
   useEffect(() => {
-    fetch(`http://localhost:5000/products/${id}`)
+    fetch(`https://agile-plains-53305.herokuapp.com/products/${id}`)
       .then((response) => response.json())
       .then((data) => setProduct(data));
   }, [id]);

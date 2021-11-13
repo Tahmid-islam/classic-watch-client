@@ -15,7 +15,7 @@ const Watches = () => {
   const history = useHistory();
 
   useEffect(() => {
-    fetch(`http://localhost:5000/products?size=6`)
+    fetch(`https://agile-plains-53305.herokuapp.com/products?size=6`)
       .then((res) => res.json())
       .then((data) => {
         setProducts(data.products);
@@ -49,8 +49,8 @@ const Watches = () => {
           {products.map((product) => (
             <Grid item xs={12} sm={6} md={4} lg={4} key={product._id}>
               <Paper
-                elevation={3}
-                sx={{ textAlign: "center", py: 3, border: "1px solid red" }}
+                elevation={2}
+                sx={{ textAlign: "center", py: 3, border: "1px solid #ECF0F1" }}
               >
                 <img src={product.img} alt={product.name} />
                 <Typography variant="body2" sx={{ fontWeight: "bold" }}>

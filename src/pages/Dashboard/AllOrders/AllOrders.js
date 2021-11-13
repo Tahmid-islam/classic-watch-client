@@ -16,7 +16,7 @@ export default function AllOrders() {
   const { user } = useAuth();
 
   React.useEffect(() => {
-    fetch(`http://localhost:5000/Orders`)
+    fetch(`https://agile-plains-53305.herokuapp.com/Orders`)
       .then((res) => res.json())
       .then((data) => setAllOrders(data));
   }, [user.email, allOrders]);
@@ -24,7 +24,7 @@ export default function AllOrders() {
   const handleUpdateStatus = (id) => {
     const proceed = window.confirm("Are you sure, you want to update status?");
     if (proceed) {
-      const url = `http://localhost:5000/updateStatus/${id}`;
+      const url = `https://agile-plains-53305.herokuapp.com/updateStatus/${id}`;
       fetch(url, {
         method: "PUT",
         headers: {
@@ -45,7 +45,7 @@ export default function AllOrders() {
   const handleDeleteOrder = (id) => {
     const proceed = window.confirm("Are you sure, you want to delete?");
     if (proceed) {
-      const url = `http://localhost:5000/orders/${id}`;
+      const url = `https://agile-plains-53305.herokuapp.com/orders/${id}`;
       fetch(url, {
         method: "DELETE",
       })

@@ -7,9 +7,11 @@ const DashboardHome = () => {
   return (
     <Box
       style={{
-        backgroundColor: "#f5f5f5",
+        backgroundColor: "#ECF0F1",
         padding: "20px",
+        marginTop: "20px",
       }}
+      sx={{ boxShadow: 3 }}
     >
       <Container sx={{ fontWeight: "bold", textAlign: "center" }}>
         <Typography
