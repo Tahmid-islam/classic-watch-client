@@ -55,7 +55,7 @@ const AddProduct = () => {
                 color: "#e74c3c",
               }}
             >
-              Add Products
+              Add Product
             </Typography>
             <form onSubmit={handleSubmit(onSubmit)}>
               <input
