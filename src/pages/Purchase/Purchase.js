@@ -1,21 +1,14 @@
-import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
 import {
-  Box,
-  Grid,
-  Card,
-  CardActionArea,
-  CardMedia,
-  CardContent,
-  Typography,
-  Container,
-  CircularProgress,
+    Box, Card,
+    CardActionArea, CardContent, CardMedia, CircularProgress, Container, Grid, Typography
 } from "@mui/material";
+import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
+import { useParams } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
 import CustomButton from "../../StyledComponents/CustomButton";
-import Navigation from "../Shared/Navigation";
 import Footer from "../Shared/Footer";
+import Navigation from "../Shared/Navigation";
 
 const Purchase = () => {
   const { id } = useParams();
@@ -38,7 +31,7 @@ const Purchase = () => {
       status: "Pending",
     };
 
-    fetch("https://agile-plains-53305.herokuapp.com/orders", {
+    fetch("https://classic-watch-server.onrender.com/orders", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -55,7 +48,7 @@ const Purchase = () => {
   };
 
   useEffect(() => {
-    fetch(`https://agile-plains-53305.herokuapp.com/products/${id}`)
+    fetch(`https://classic-watch-server.onrender.com/products/${id}`)
       .then((response) => response.json())
       .then((data) => setProduct(data));
   }, [id]);

@@ -1,8 +1,8 @@
-import * as React from "react";
-import { useTheme } from "@mui/material/styles";
 import { Box, Container } from "@mui/material";
 import Paper from "@mui/material/Paper";
+import { useTheme } from "@mui/material/styles";
 import Typography from "@mui/material/Typography";
+import * as React from "react";
 import SwipeableViews from "react-swipeable-views";
 import { autoPlay } from "react-swipeable-views-utils";
 
@@ -11,11 +11,11 @@ const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 const images = [
   {
     imgPath:
-      "https://www.casio-intl.com/cs/Satellite?blobcol=urldata&blobheader=image%2Fjpeg&blobheadername1=content-disposition&blobheadervalue1=inline%3Bfilename%3DG-Shock-1200x600.jpg&blobkey=id&blobtable=MungoBlobs&blobwhere=1426272549957&ssbinary=true",
+      "https://images.pexels.com/photos/190819/pexels-photo-190819.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
   },
   {
     imgPath:
-      "https://www.casio-intl.com/cs/Satellite?blobcol=urldata&blobheader=image%2Fjpeg&blobheadername1=content-disposition&blobheadervalue1=inline%3Bfilename%3DEdifice-Chronograph--1200x600.jpg&blobkey=id&blobtable=MungoBlobs&blobwhere=1426249133942&ssbinary=true",
+      "https://images.pexels.com/photos/125779/pexels-photo-125779.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
   },
   {
     imgPath: "https://babyg.casio.com/assets2018/img/bga-290bd/main.jpg",

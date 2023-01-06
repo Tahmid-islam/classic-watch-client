@@ -1,11 +1,11 @@
-import * as React from "react";
-import { Table, Container, Typography } from "@mui/material";
+import { Container, Table, Typography } from "@mui/material";
+import Paper from "@mui/material/Paper";
 import TableBody from "@mui/material/TableBody";
 import TableCell from "@mui/material/TableCell";
 import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
-import Paper from "@mui/material/Paper";
+import * as React from "react";
 import useAuth from "../../../hooks/useAuth";
 import CustomButton from "../../../StyledComponents/CustomButton";
 
@@ -16,7 +16,7 @@ export default function AllOrders() {
   const { user } = useAuth();
 
   React.useEffect(() => {
-    fetch(`https://agile-plains-53305.herokuapp.com/Orders`)
+    fetch(`https://classic-watch-server.onrender.com/Orders`)
       .then((res) => res.json())
       .then((data) => setAllOrders(data));
   }, [user.email, allOrders]);
@@ -24,7 +24,7 @@ export default function AllOrders() {
   const handleUpdateStatus = (id) => {
     const proceed = window.confirm("Are you sure, you want to update status?");
     if (proceed) {
-      const url = `https://agile-plains-53305.herokuapp.com/updateStatus/${id}`;
+      const url = `https://classic-watch-server.onrender.com/updateStatus/${id}`;
       fetch(url, {
         method: "PUT",
         headers: {
@@ -45,7 +45,7 @@ export default function AllOrders() {
   const handleDeleteOrder = (id) => {
     const proceed = window.confirm("Are you sure, you want to delete?");
     if (proceed) {
-      const url = `https://agile-plains-53305.herokuapp.com/orders/${id}`;
+      const url = `https://classic-watch-server.onrender.com/orders/${id}`;
       fetch(url, {
         method: "DELETE",
       })

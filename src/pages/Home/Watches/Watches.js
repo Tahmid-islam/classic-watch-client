@@ -1,21 +1,19 @@
-import React, { useEffect, useState } from "react";
 import {
-  Box,
-  Container,
-  Grid,
-  Paper,
-  Typography,
-  CircularProgress,
+    Box, CircularProgress, Container,
+    Grid,
+    Paper,
+    Typography
 } from "@mui/material";
-import CustomButton from "../../../StyledComponents/CustomButton";
+import React, { useEffect, useState } from "react";
 import { NavLink, useHistory } from "react-router-dom";
+import CustomButton from "../../../StyledComponents/CustomButton";
 
 const Watches = () => {
   const [products, setProducts] = useState([]);
   const history = useHistory();
 
   useEffect(() => {
-    fetch(`https://agile-plains-53305.herokuapp.com/products?size=6`)
+    fetch(`https://classic-watch-server.onrender.com/products?size=6`)
       .then((res) => res.json())
       .then((data) => {
         setProducts(data.products);

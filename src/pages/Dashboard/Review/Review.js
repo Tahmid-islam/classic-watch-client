@@ -1,13 +1,12 @@
-import React from "react";
 import {
-  CircularProgress,
-  Container,
-  Grid,
-  Typography,
-  Box,
+    Box, CircularProgress,
+    Container,
+    Grid,
+    Typography
 } from "@mui/material";
-import useAuth from "../../../hooks/useAuth";
+import React from "react";
 import { useForm } from "react-hook-form";
+import useAuth from "../../../hooks/useAuth";
 import CustomButton from "../../../StyledComponents/CustomButton";
 
 const Review = () => {
@@ -20,7 +19,7 @@ const Review = () => {
       email: user.email,
     };
 
-    fetch("https://agile-plains-53305.herokuapp.com/reviews", {
+    fetch("https://classic-watch-server.onrender.com/reviews", {
       method: "POST",
       headers: {
         "content-type": "application/json",

@@ -1,6 +1,6 @@
+import { Alert, Box, Typography } from "@mui/material";
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
-import { Alert, Box, Typography } from "@mui/material";
 import CustomButton from "../../../StyledComponents/CustomButton";
 
 const MakeAdmin = () => {
@@ -8,7 +8,7 @@ const MakeAdmin = () => {
   const [success, setSuccess] = useState(false);
 
   const onSubmit = (data) => {
-    fetch("https://agile-plains-53305.herokuapp.com/admin", {
+    fetch("https://classic-watch-server.onrender.com/admin", {
       method: "PUT",
       headers: { "content-type": "application/json" },
       body: JSON.stringify(data),

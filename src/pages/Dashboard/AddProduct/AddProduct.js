@@ -1,13 +1,12 @@
-import React, { useEffect } from "react";
 import {
-  CircularProgress,
+  Box, CircularProgress,
   Container,
   Grid,
-  Typography,
-  Box,
+  Typography
 } from "@mui/material";
-import useAuth from "../../../hooks/useAuth";
+import React, { useEffect } from "react";
 import { useForm } from "react-hook-form";
+import useAuth from "../../../hooks/useAuth";
 import CustomButton from "../../../StyledComponents/CustomButton";
 
 const AddProduct = () => {
@@ -19,7 +18,7 @@ const AddProduct = () => {
 
   const { register, handleSubmit, reset } = useForm();
   const onSubmit = (data) => {
-    fetch("https://agile-plains-53305.herokuapp.com/products", {
+    fetch("https://classic-watch-server.onrender.com/products", {
       method: "POST",
       headers: {
         "content-type": "application/json",

@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from "react";
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
 import { Container, Typography } from "@mui/material";
-import Rating from "react-rating";
 import CardContent from "@mui/material/CardContent";
+import React, { useEffect, useState } from "react";
+import Rating from "react-rating";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick-theme.css";
+import "slick-carousel/slick/slick.css";
 import "./Reviews.css";
 
 export default function Reviews() {
@@ -53,7 +53,7 @@ export default function Reviews() {
   const [reviews, setReviews] = useState([]);
 
   useEffect(() => {
-    fetch(`https://agile-plains-53305.herokuapp.com/reviews`)
+    fetch(`https://classic-watch-server.onrender.com/reviews`)
       .then((res) => res.json())
       .then((data) => setReviews(data));
   }, [reviews]);

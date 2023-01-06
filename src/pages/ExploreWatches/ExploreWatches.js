@@ -1,17 +1,15 @@
-import React, { useEffect, useState } from "react";
 import {
-  Box,
-  Container,
-  Grid,
-  Paper,
-  Typography,
-  CircularProgress,
+    Box, CircularProgress, Container,
+    Grid,
+    Paper,
+    Typography
 } from "@mui/material";
-import CustomButton from "../../StyledComponents/CustomButton";
-import { useHistory } from "react-router-dom";
-import Navigation from "../Shared/Navigation";
-import Footer from "../Shared/Footer";
+import React, { useEffect, useState } from "react";
 import { Fade } from "react-reveal";
+import { useHistory } from "react-router-dom";
+import CustomButton from "../../StyledComponents/CustomButton";
+import Footer from "../Shared/Footer";
+import Navigation from "../Shared/Navigation";
 
 const ExploreWatches = () => {
   const [products, setProducts] = useState([]);
@@ -22,7 +20,7 @@ const ExploreWatches = () => {
   }, []);
 
   useEffect(() => {
-    fetch(`https://agile-plains-53305.herokuapp.com/products`)
+    fetch(`https://classic-watch-server.onrender.com/products`)
       .then((res) => res.json())
       .then((data) => setProducts(data.products));
   }, []);

@@ -1,15 +1,8 @@
-import { useState, useEffect } from "react";
-import initializeFirebase from "../pages/Login/Firebase/firebase.init";
 import {
-  getAuth,
-  signInWithPopup,
-  GoogleAuthProvider,
-  createUserWithEmailAndPassword,
-  signInWithEmailAndPassword,
-  onAuthStateChanged,
-  updateProfile,
-  signOut,
+  createUserWithEmailAndPassword, getAuth, GoogleAuthProvider, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile
 } from "firebase/auth";
+import { useEffect, useState } from "react";
+import initializeFirebase from "../pages/Login/Firebase/firebase.init";
 
 // initialize firebase app
 initializeFirebase();
@@ -105,7 +98,7 @@ const useFirebase = () => {
   }, [auth]);
 
   useEffect(() => {
-    fetch(`https://agile-plains-53305.herokuapp.com/admin/${user?.email}`)
+    fetch(`https://classic-watch-server.onrender.com/admin/${user?.email}`)
       .then((res) => res.json())
       .then((data) => {
         if (data[0]?.role === "admin") {
@@ -134,7 +127,7 @@ const useFirebase = () => {
   // Save user information to database
   const saveUser = (email, displayName, method) => {
     const user = { email, displayName };
-    fetch("https://agile-plains-53305.herokuapp.com/users", {
+    fetch("https://classic-watch-server.onrender.com/users", {
       method: method,
       headers: {
         "Content-Type": "application/json",
